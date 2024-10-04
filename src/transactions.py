@@ -20,16 +20,24 @@ See the GNU General Public License for more details.
 You should have received a copy of the GNU General Public License along with Walle-et project. 
 If not, see <https://www.gnu.org/licenses/>. """
 
+import random
 class Transaction:
     def __init__(
-        self, id_reference: str, wallet_id: str, amount: float, date: str, were: str
+        self, id_reference: str, wallet_id: str, amount: float, date: str, type_: str
     ):
         self.id_reference = id_reference
         self.wallet_id = wallet_id
         self.amount = amount
         self.date = date
-        self.were = were
+        self.type_ = type_
 
     @staticmethod
     def add_transaction_to_movements():
         pass
+
+    @staticmethod
+    def transaction_reference(wallet_id: str):
+        i = 000
+        reference = wallet_id + str(i)
+        i =+ 1
+        return reference
